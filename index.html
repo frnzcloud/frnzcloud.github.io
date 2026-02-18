@@ -1,48 +1,89 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Fernando's Data Analysis Portfolio</title>
+    <title>Fernando's Portfolio</title>
     <style>
-        body { font-family: sans-serif; line-height: 1.6; margin: 2em; background-color: #f4f4f4; }
-        .container { max-width: 800px; margin: auto; background: white; padding: 20px; border-radius: 8px; }
-        .project { border-bottom: 1px solid #ddd; padding-bottom: 1em; margin-bottom: 1em; }
-        h1, h2 { color: #333; }
-        a { color: #0366d6; text-decoration: none; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0; background-color: #f4f4f4; color: #333; }
+        .container { max-width: 800px; margin: 40px auto; background: white; padding: 40px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .intro { margin-bottom: 2em; border-bottom: 2px solid #0366d6; padding-bottom: 1em; }
+        .project { border-bottom: 1px solid #eee; padding-bottom: 2em; margin-bottom: 2em; }
+        .project:last-child { border-bottom: none; }
+        h1 { color: #2c3e50; }
+        h2 { color: #0366d6; margin-top: 0; }
+        a { color: #0366d6; text-decoration: none; font-weight: bold; }
         a:hover { text-decoration: underline; }
+        
+       
+        .project-img {
+            width: 100%;
+            max-width: 600px; 
+            height: auto;
+            border-radius: 4px;
+            margin-top: 10px;
+            border: 1px solid #ddd;
+            display: block;
+        }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h1>Fernando's Portfolio</h1>
-        <p>Welcome! I'm an aspiring Data/BI Analyst with a passion for creating data-driven insights/stories. Below are some of my recent projects.</p>
+        <div class="intro">
+            <h1>Fernando Moran</h1>
+            <p><strong>Information & Decision Sciences | UIC (Graduated Dec 2025)</strong></p>
+            <p>Hi, I recently graduated from UIC with a degree in Information & Decision Sciences.</p>
+            <p>My focus is on Data Analysis and Business Intelligence. Below are a few projects I've worked on to practice my technical skills and solve specific business problems in Finance, E-commerce, Insurance, and more.</p>
+            <p>
+                <a href="https://github.com/frnzcloud">GitHub Profile</a>
+            </p>
+        </div>
 
         <div class="project">
-            <h2>Chicago 311 Operational Dashboard</h2>
-            <p>An interactive dashboard built in <strong>Excel</strong> to analyze the operational efficiency of Chicago's 311 service requests. This project involved ETL in Power Query, analysis with PivotTables, and creating a dynamic dashboard with slicers.</p>
-            <p><strong>Tools:</strong> Excel, Power Query, PivotTables</p>
-            <p><a href="https://github.com/frnzcloud/Excel-Analysis-on-Chicago-Services" target="_blank">View Project on GitHub</a></p>
+            <h2>Insurance Claims Dashboard</h2>
+            <p><strong>The Goal:</strong> To reduce financial "leakage" by spotting outlier claims early.</p>
+            <p><strong>Why It Matters:</strong> If a specific vendor's average claim cost is significantly higher than the benchmark, the Claims Manager needs to know immediately. This dashboard is important because it highlights these "Major Loss" events, allowing the company to audit those specific vendors and save costs.</p>
+            <p><strong>What I Built:</strong> I connected three datasets in Power BI to create a fraud-detection dashboard. I created a "Risk Flag" for vendors that consistently appear in the high-cost categories. The dashboard allows you to filter by "Major vs. Minor" loss and uses a timeline slider to narrow down the data range to find specific patterns.</p>
+            <p><strong>Tools:</strong> Power BI, DAX, Power Query</p>
+            
+            <img src="insurance.png" alt="Insurance Dashboard Screenshot" class="project-img">
+            
+            <p><br><a href="https://github.com/frnzcloud/insurance-claims-integrity-analysis" target="_blank">View Project on GitHub &rarr;</a></p>
+        </div>
+
+        <div class="project">
+            <h2>Credit Risk Vintage Analysis (Snowflake Migration)</h2>
+            <p><strong>The Goal:</strong> To track loan performance by "Vintage" (origination month) because looking at total portfolio averages often hides rising risk trends.</p>
+            <p><strong>Why It Matters:</strong> If loans issued to specific vintages are being defaulted at a significant rate compared to others, then that should be further looked into. The bank needs to tighten its lending policy <em>now</em> to prevent future losses.</p>
+            <p><strong>What I Built:</strong> I migrated a local credit pipeline from DBeaver to <strong>Snowflake</strong>. I then connected it to Tableau to visualize delinquency rates (30/60/90 days past due) by origination month. I also broke down the risk by demographics like housing history and age groups.</p>
+            <p><strong>Tools:</strong> Snowflake, SQL, Tableau</p>
+            
+            <img src="vintage.png" alt="Vintage Analysis Screenshot" class="project-img">
+            
+            <p><br><a href="https://github.com/frnzcloud/credit-risk-vintage-analysis-snowflake" target="_blank">View Project on GitHub &rarr;</a></p>
         </div>
 
         <div class="project">
             <h2>Shopify Merchant Success Analysis</h2>
-            <p>A deep-dive analysis using <strong>Power BI</strong> on synthetic Shopify merchant data. I cleaned the data in Power Query, created calculated measures with DAX, and built a dashboard to identify key drivers of merchant success.</p>
-            <p><strong>Tools:</strong> Power BI, DAX, Power Query</p>
-            <p><a href="https://github.com/frnzcloud/Shopify-Merchant-Success-Analysis" target="_blank">View Project on GitHub</a></p>
+            <p><strong>The Goal:</strong> To determine which app combinations lead to higher revenue, helping new merchants avoid "analysis paralysis."</p>
+            <p><strong>Why It Matters:</strong> New business owners often guess at what software they need. This analysis matters because it uses data to prove which tools are actually worth the investment. For Shopify, this is key data to drive a "bundling" strategy that increases app sales.</p>
+            <p><strong>The Insight:</strong> The data showed that successful merchants typically use a specific combination of apps (Marketing + Inventory + Loyalty). My recommendation is that Shopify should bundle these into a "Starter Package" to increase software revenue for the platform while boosting success rates for new business owners.</p>
+            <p><strong>Tools:</strong> Power BI, DAX</p>
+            
+            <img src="shopify.png" alt="Shopify Dashboard Screenshot" class="project-img">
+
+            <p><br><a href="https://github.com/frnzcloud/Shopify-Merchant-Success-Analysis" target="_blank">View Project on GitHub &rarr;</a></p>
         </div>
 
         <div class="project">
-            <h2>End-to-End Steam Data Pipeline</h2>
-            <p>A full data pipeline project. I extracted raw game data from Kaggle, cleaned it using <strong>Python</strong> (Pandas), loaded it into a <strong>PostgreSQL</strong> database, created SQL views, and visualized the results in <strong>Tableau</strong>.</p>
-            <p><strong>Tools:</strong> Python, SQL, PostgreSQL, Tableau</p>
-            <p><a href="https://github.com/frnzcloud/steamData-end-to-end-pipe" target="_blank">View Project on GitHub</a></p>
-        </div>
+            <h2>Chicago 311 Operational Dashboard</h2>
+            <p><strong>The Goal:</strong> To find out what city services are lagging behind compared to others.</p>
+            <p><strong>Why It Matters:</strong> This analysis is useful for City Planners to re-allocate maintenance crews to neglected services and areas, ensuring that all services are met in a timely manner.</p>
+            <p><strong>What I Built:</strong> I analyzed 311 data to look for operational inefficiencies. The dashboard visualizes response times by services and zip code, highlighting departments and areas where service delivery is lagging behind the city average.</p>
+            <p><strong>Tools:</strong> Excel, Power Query</p>
+            
+            <img src="311.png" alt="Chicago 311 Dashboard Screenshot" class="project-img">
 
-        <div class="project">
-            <h2>SQL Data Exploration & Insights</h2>
-            <p>A project focused purely on <strong>SQL</strong> to perform data exploration on a public dataset from Mode. I wrote a series of queries to uncover insights, identify trends, and formulate business recommendations based on my findings.</p>
-            <p><strong>Tools:</strong> SQL</p>
-            <p><a href="https://github.com/frnzcloud/sql-on-dataset" target="_blank">View Project on GitHub</a></p>
+            <p><br><a href="https://github.com/frnzcloud/Excel-Analysis-on-Chicago-Services" target="_blank">View Project on GitHub &rarr;</a></p>
         </div>
 
     </div>
